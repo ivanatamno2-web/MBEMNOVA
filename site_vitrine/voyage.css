@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
+container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("image\Bandjoun.jpg") center/cover fixed no-repeat;
+  background: url("../image/bandjoun.jpg") center/cover fixed no-repeat;
   color: #fff;
+  min-height: 100vh;
 }
 
 /* NAVIGATION FIXE */
