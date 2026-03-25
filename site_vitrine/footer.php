@@ -1,5 +1,6 @@
 <footer>
         .
-        
-<p>© 2026 Ouest Cameroun — Tous droits réservés</p>
+
+        <p>© 2026 Ouest Cameroun — Tous droits réservés</p>
 </footer>
+<?php include "footer.php"; ?>

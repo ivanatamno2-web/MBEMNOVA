@@ -35,7 +35,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body class="container">
-    <?php include 'header.php'; ?>
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <img class="log" src="image\yaounde.jpg" alt="voyage">
+                <h2>Voyage</h2>
+            </div>
+            <div class="navigation">
+                <a href="#accueil">Accueil</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+</header>
     <main>
         <section id="accueil">
             <div class="accueil-content">
@@ -103,7 +115,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </section>
     </main>
-    <?php include "footer.php"; ?>
+    <footer>
+    <p>© 2026 Ouest Cameroun — Tous droits réservés</p>
+    </footer>
 
 </body>
 <script>
