@@ -1,0 +1,89 @@
+<?php
+
+try{
+$pdo = new PDO("mysql:host=localhost; dbname=site_vitrine; charset=utf8", "root","");
+$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(PDOException $e){
+die("Erreur :".$e->getMessage());
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $nom=htmlspecialchars($_POST['nom']);
+    $email=htmlspecialchars($_POST['email']);
+    $message=htmlspecialchars($_POST['message']);
+
+    $sql= "INSERT INTO contact (nom, email, message) VALUES (:nom, :email, :message)";
+    $stmt=$pdo->prepare($sql);
+    $stmt->execute([':nom'=>$nom,
+                    ':email'=>$email,
+                    ':message'=>$message]);
+
+    echo "<p> Message envoye avec succes</p>";
+}
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini site vitrine de voyage</title>
+    <link rel="stylesheet" href="voyage.css">
+</head>
+<body>
+    <?php include 'header.php' ;?>
+    <main>
+        <section id="accueil">
+            <div class="accueil-content">
+                <div class="text">
+                    <h2>Découvrez l’Ouest Cameroun, un coin paradisiaque</h2>
+                    <p>
+                        L’Ouest Cameroun est une destination unique qui combine montagnes majestueuses,
+                        culture riche et paysages à couper le souffle. Parfait pour les voyageurs
+                        en quête d’aventure, de détente et de découvertes culturelles.
+                    </p>
+                    <a href="#galerie" class="btn">Explorer la galerie</a>
+                </div>
+                <div class="image">
+                    <img src="image/haut_plateau.jpg" alt="Ouest Cameroun">
+                </div>
+            </div>
+        </section>
+
+        <section id="galerie">
+            <h2>Les incontournables de l’Ouest Cameroun</h2>
+            <div class="galerie-grid">
+                <div><img src="image/repos.jpg"><h3>Plages de sable blanc</h3><p>Détente et couchers de soleil.</p></div>
+                <div><img src="image/pont_eau.jpg"><h3>Rizières en terrasse</h3><p>Tradition et paysages verdoyants.</p></div>
+                <div><img src="image/maison.jpg"><h3>Temples sacrés</h3><p>Architecture et spiritualité.</p></div>
+                <div><img src="image/roche.jpg"><h3>Roches mythiques</h3><p>Sites naturels impressionnants.</p></div>
+                <div><img src="image/maison_chef.jpg"><h3>Maison du chef</h3><p>Art et culture traditionnelle.</p></div>
+                <div><img src="image/chef.jpg"><h3>Le Chef</h3><p>Héritage et coutumes vivantes.</p></div>
+                <div><img src="image/danse.jpg"><h3>Danses traditionnelles</h3><p>Joie et festivités locales.</p></div>
+                <div><img src="image/village.jpg"><h3>Village typique</h3><p>Beauté et hospitalité camerounaise.</p></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Planifiez votre voyage</h2>
+            <p>Besoin d’informations supplémentaires ? Contactez-nous pour organiser votre séjour sur mesure.</p>
+            <form method="POST" action="voyage.php">
+                <input type="text" name="nom" placeholder="Nom" required>
+                <input type="email" name="email"  placeholder="Email" required>
+                <textarea name = "message" placeholder="Message" required></textarea>
+                <button type="submit">Nous contacter</button>
+            </form>
+        </section>
+    </main>
+    <?php include "footer.php";?>
+   
+</body>
+<script>
+window.addEventListener('load', () => {
+  document.querySelector('#accueil').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+});
+</script>
+</html>
