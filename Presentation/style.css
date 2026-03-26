@@ -1,0 +1,129 @@
+body{
+   width: 100%;
+   height: 200px;
+   margin: 0px 10px 0px 0px;
+   padding: 0px 10px 0 0px;
+   background-color:lemonchiffon;
+   overflow: hidden;
+}
+/* button{ background-color:lemonchiffon; transition : background-color 0.5s ease }; 
+   button:hover{ background-color:yellow };
+    ease, linear, ease-in, ease-out
+   button{ background-color:lemonchiffon; transition : transform 0.5s;nn }; 
+   button:hover{ transform: rotation(45deg) scale(1.2); };
+    rotation
+    */
+.tete h1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-shadow:  4px 4px 2px rgb(79, 75, 75);
+    font-size: 48px;
+}
+hr{
+    width: 50%;
+    justify-content: center;
+    background-color: black;
+    border: 0.5px solid black;
+}
+.session{
+    font-size: 85%;
+}
+.container{
+    width: 100%;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
+.para{
+    width: 60%;
+    height: 60%;
+    margin-right: 30px;
+    margin-top: 0px;
+}
+.photo{
+    width: 30%;
+    height: 80%;
+    border-radius: 60%;
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    box-shadow: 13px 13px 8px rgb(60, 56, 56);
+    margin-right: 30px;
+    transition: transform 0.3s;
+}
+.photo :hover{
+    transform: translateY(-8px);
+}
+.para h2{
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+}
+.para p{
+    font-size: 130%;
+    text-align: justify;
+    margin-top: 40px;
+    margin-left: 15px;
+    line-height: 140%;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 14%;
+    margin-top: 10px;
+}
+.icon img{
+    width: 50px;
+    height: 40px;
+    border-radius: 60%;
+    margin-left: 20px;
+}
+footer{
+    padding: 10px 10px;
+    height: 65px;
+    background-color: darkgray;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+footer div{
+    text-align: center;
+    padding-top: 5px;
+}
+footer div a{
+    color: black;
+    padding-left: 20px;
+    text-decoration: none;
+}
+footer div a:hover{
+    color: mediumblue;
+}
+footer p{
+    text-align: center;
+}
+@media (max-width: 768px) {
+  .session {
+    flex-direction: column;
+  }
+  .para p{
+    margin-top: 15px;
+  }
+  footer{
+    padding: 0px 0px;
+  }
+  .photo{
+    width: 40%;
+    height: 70%;
+  }
+  .navigation {
+    display: none; /* tu peux plus tard ajouter un menu burger */
+  }
+}    
+@media (max-width: 468px){
+    .photo{
+    width: 40%;
+    height: 70%;
+  }
+}

@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-container {
+.container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("../image/bandjoun.jpg") center/cover fixed no-repeat;
+  background: url("image/bandjoun.jpg") center/cover no-repeat fixed;
   color: #fff;
-  min-height: 100vh;
+  min-height: 10vh;
 }
 
 /* NAVIGATION FIXE */
@@ -67,7 +67,7 @@ header {
 /* MAIN SECTIONS */
 main {
   max-width: 1200px;
-  margin: 100px auto 40px;
+  margin: 10px auto 40px;
   display: flex;
   flex-direction: column;
   gap: 100px;
@@ -228,6 +228,9 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .container{
+    min-height: auto;
+  }
   #accueil .accueil-content {
     flex-direction: column;
     text-align: center;
